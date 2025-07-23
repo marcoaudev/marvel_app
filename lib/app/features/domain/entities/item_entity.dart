@@ -1,9 +1,11 @@
-class ItemEntity {
+import 'package:equatable/equatable.dart';
+
+class ItemEntity extends Equatable {
   final String resourceURI;
   final String name;
   final String? type;
 
-  ItemEntity({required this.resourceURI, required this.name, this.type});
+  const ItemEntity({required this.resourceURI, required this.name, this.type});
 
   factory ItemEntity.fromJson(Map<String, dynamic> json) {
     return ItemEntity(
@@ -12,4 +14,7 @@ class ItemEntity {
       type: json['type'] as String?,
     );
   }
+
+  @override
+  List<Object?> get props => [resourceURI, name, type];
 }

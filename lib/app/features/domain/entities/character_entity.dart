@@ -1,8 +1,9 @@
+import 'package:equatable/equatable.dart';
 import 'package:marvel_app/app/features/domain/entities/comic_entity.dart';
 import 'package:marvel_app/app/features/domain/entities/thumbnail_entity.dart';
 import 'package:marvel_app/app/features/domain/entities/urls_entity.dart';
 
-class CharacterEntity {
+class CharacterEntity extends Equatable {
   final int id;
   final String name;
   final String description;
@@ -13,7 +14,7 @@ class CharacterEntity {
   final ComicEntity events;
   final List<UrlEntity> urls;
 
-  CharacterEntity({
+  const CharacterEntity({
     required this.id,
     required this.name,
     required this.description,
@@ -38,9 +39,23 @@ class CharacterEntity {
       series: ComicEntity.fromJson(json['series'] as Map<String, dynamic>),
       stories: ComicEntity.fromJson(json['stories'] as Map<String, dynamic>),
       events: ComicEntity.fromJson(json['events'] as Map<String, dynamic>),
-      urls: (json['urls'] as List<dynamic>)
-          .map((e) => UrlEntity.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      urls:
+          (json['urls'] as List<dynamic>)
+              .map((e) => UrlEntity.fromJson(e as Map<String, dynamic>))
+              .toList(),
     );
   }
+
+  @override
+  List<Object?> get props => [
+    id,
+    name,
+    description,
+    thumbnail,
+    comics,
+    series,
+    stories,
+    events,
+    urls,
+  ];
 }
