@@ -11,12 +11,12 @@ import '../../../../../../mocks/character_mock.dart';
 class MockHttpClient extends Mock implements IHttpClient {}
 
 void main() {
-  late CharacterMarvelDatasourceRemote datasource;
+  late CharacterMarvelDataSourceRemote datasource;
   late MockHttpClient client;
 
   setUp(() {
     client = MockHttpClient();
-    datasource = CharacterMarvelDatasourceRemote(client);
+    datasource = CharacterMarvelDataSourceRemote(client);
   });
 
   void mockSuccessGetCharacters() {

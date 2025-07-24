@@ -4,9 +4,9 @@ import 'package:marvel_app/app/core/services/http_client/http_exception.dart';
 import 'package:marvel_app/app/features/data/datasource/character_datasource.dart';
 import 'package:marvel_app/app/features/domain/entities/character_entity.dart';
 
-class CharacterMarvelDatasourceRemote implements ICharacterDataSource {
+class CharacterMarvelDataSourceRemote implements ICharacterDataSource {
   final IHttpClient httpClient;
-  CharacterMarvelDatasourceRemote(this.httpClient);
+  CharacterMarvelDataSourceRemote(this.httpClient);
 
   @override
   Future<List<CharacterEntity>> getCharacters({int offset = 0}) async {

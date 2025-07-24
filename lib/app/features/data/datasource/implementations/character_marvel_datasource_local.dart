@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:marvel_app/app/features/data/datasource/character_datasource.dart';
 import 'package:marvel_app/app/features/domain/entities/character_entity.dart';
 
-class CharactersMarvelClientLocal implements ICharacterDataSource {
+class CharactersMarvelDataSourceLocal implements ICharacterDataSource {
   static const String _charactersPath = 'assets/response/response.json';
 
   Future<List<CharacterEntity>> _loadCharactersFromAsset(String path) async {
