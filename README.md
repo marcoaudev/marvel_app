@@ -5,13 +5,13 @@
 
    <p align="center">
       <img src="assets/prints/IMG-20250725-WA0010.jpg" width="200">
-      <img src=".github/print2.png" width="200">
-      <img src=".github/print4.png" width="200">
+      <img src="assets/prints/IMG-20250725-WA0011.jpg" width="200">
+      <img src="assets/prints/IMG-20250725-WA0012.jpg" width="200">
    </p>
    <p align="center">
-      <img src=".github/print1.png" width="200"">
-      <img src=".github/print2.png" width="200">
-      <img src=".github/print4.png" width="200">
+      <img src="assets/prints/IMG-20250725-WA0013.jpg" width="200"">
+      <img src="assets/prints/IMG-20250725-WA0014.jpg" width="200">
+      <img src="assets/prints/IMG-20250725-WA0015.jpg" width="200">
    </p>
 
 
