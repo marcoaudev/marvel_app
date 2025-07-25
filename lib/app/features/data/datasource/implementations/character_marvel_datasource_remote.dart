@@ -10,11 +10,11 @@ class CharacterMarvelDataSourceRemote implements ICharacterDataSource {
 
   @override
   Future<List<CharacterEntity>> getCharacters({int offset = 0}) async {
-    final response = await httpClient.get(
-      '/characters?offset=$offset&limit=20',
-    );
-
     try {
+      final response = await httpClient.get(
+        '/characters?offset=$offset&limit=20',
+      );
+
       final data = response.data;
       final results = data['data']['results'] as List;
       return results.map((e) => CharacterEntity.fromJson(e)).toList();
@@ -31,8 +31,9 @@ class CharacterMarvelDataSourceRemote implements ICharacterDataSource {
 
   @override
   Future<CharacterEntity?> getCharacterById({required int id}) async {
-    final response = await httpClient.get('/characters/$id');
     try {
+      final response = await httpClient.get('/characters/$id');
+
       final data = response.data;
       final results = data['data']['results'] as List;
       if (results.isEmpty) {
