@@ -1,5 +1,9 @@
 # 🦸‍♂️ Marvel App - Flutter + Clean Architecture
 
+## 📲 Visualização
+
+
+
 ## 📋 Visão Geral
 
 Este projeto é uma aplicação Flutter que consome a **API pública da Marvel**, com foco em **robustez**, **manutenibilidade** e **escalabilidade**.
