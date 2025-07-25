@@ -20,7 +20,7 @@
 
 Este projeto é uma aplicação Flutter que consome a **API pública da Marvel**, com foco em **robustez**, **manutenibilidade** e **escalabilidade**.
 
-Ele adota a **App Architecture (Google/Flutter)** com princípios da **Clean Architecture**, promovendo:
+Ele adota a **Clean Architecture**, promovendo:
 
 - ✅ **Modularização** clara por features e camadas
 - ✅ **Reatividade** com `flutter_bloc`
