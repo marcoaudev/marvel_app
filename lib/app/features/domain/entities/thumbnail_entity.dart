@@ -14,5 +14,10 @@ class ThumbnailEntity extends Equatable {
   }
 
   @override
+  String toString() {
+    return "$path.$extension";
+  }
+
+  @override
   List<Object?> get props => [path, extension];
 }
