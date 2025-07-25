@@ -3,6 +3,18 @@
 ## 📲 Visualização
 
 
+   <p align="center">
+      <img src="assets/prints/IMG-20250725-WA0010.jpg" width="200">
+      <img src=".github/print2.png" width="200">
+      <img src=".github/print4.png" width="200">
+   </p>
+   <p align="center">
+      <img src=".github/print1.png" width="200"">
+      <img src=".github/print2.png" width="200">
+      <img src=".github/print4.png" width="200">
+   </p>
+
+
 
 ## 📋 Visão Geral
 
