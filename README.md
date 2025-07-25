@@ -51,22 +51,3 @@ Ele adota a **App Architecture (Google/Flutter)** com princípios da **Clean Arc
 | **Injeção de Dependência** | get_it | ^8.0.3   | Service Locator                                  |
 | **SVG** | flutter_svg             | ^2.2.0   | Renderização de gráficos vetoriais              |
 
----
-
-## 🏛️ Arquitetura - App Architecture (Google/Flutter)
-
-```mermaid
-graph TD
-    subgraph "UI Layer"
-        A[Widgets por Feature] --> B[Cubits (Bloc)]
-    end
-
-    subgraph "Domain Layer"
-        B --> C[Use Cases]
-        C --> D[Entidades]
-    end
-
-    subgraph "Data Layer"
-        C --> E[Repositórios]
-        E --> F[Serviços/API]
-    end
