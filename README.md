@@ -24,12 +24,13 @@ Ele adota a **Clean Architecture**, promovendo:
 - ✅ **Separação de responsabilidades** para um código limpo e sustentável
 
 ---
-Observações Importantes:
-A API da Marvel pode apresentar instabilidade e limitação de requisições. O projeto foi desenhado para lidar com isso, mas falhas ocasionais são esperadas da fonte externa.
+## 💡Observações Importantes:
 
-Para garantir flexibilidade e resiliência, o projeto conta com dois data sources: um mock para desenvolvimento e testes rápidos, e um remoto para integração real com a API.
+- A API da Marvel pode apresentar instabilidade e limitação de requisições. O projeto foi desenhado para lidar com isso, mas falhas ocasionais são esperadas da fonte externa.
 
-Há uma preocupação contínua com a acessibilidade da interface, explorando o uso de scale para adaptação de tamanho e semanticsLabel para melhorar a navegação por leitores de tela.
+- Para garantir flexibilidade e resiliência, o projeto conta com dois data sources: um mock para desenvolvimento e testes rápidos, e um remoto para integração real com a API.
+
+- Há uma preocupação contínua com a acessibilidade da interface, explorando o uso de scale para adaptação de tamanho e semanticsLabel para melhorar a navegação por leitores de tela.
 
 ## ✨ Funcionalidades
 
