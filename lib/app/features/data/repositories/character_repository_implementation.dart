@@ -14,8 +14,8 @@ class CharacterRepositoryImplementation implements ICharacterRepository {
     try {
       final response = await datasource.getCharacters();
       return (null, response);
-    } catch (e) {
-      return (e as Exception, null);
+    } on Exception catch (e) {
+      return (e, null);
     }
   }
 
@@ -26,8 +26,8 @@ class CharacterRepositoryImplementation implements ICharacterRepository {
     try {
       final response = await datasource.getCharacterById(id: id);
       return (null, response);
-    } catch (e) {
-      return (e as Exception, null);
+    } on Exception catch (e) {
+      return (e, null);
     }
   }
 }

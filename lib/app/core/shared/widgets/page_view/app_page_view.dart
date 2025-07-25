@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppCarousel extends StatefulWidget {
-  final List<Widget> items;
+  final List<Widget> items; 
   const AppCarousel({super.key, required this.items});
 
   @override

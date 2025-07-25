@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:marvel_app/app/features/domain/entities/character_entity.dart';
 import 'package:marvel_app/app/features/domain/usecases/get_characters_use_case.dart';
 import 'package:marvel_app/app/features/ui/home/blocs/home_event.dart';
 import 'package:marvel_app/app/features/ui/home/blocs/home_state.dart';
@@ -10,6 +11,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   int _offset = 0;
   final int _limit = 20;
   bool _isLoadingMore = false;
+  List<CharacterEntity> _characters = [];
 
   HomeBloc(this.getCharacters) : super(InitialHomeState()) {
     scrollController.addListener(_onScroll);
@@ -22,7 +24,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         emit(FailedHomeState(response.$1.toString()));
       } else if (response.$2 != null) {
         _offset += _limit;
-        emit(SuccessHomeState(response.$2!));
+        _characters = response.$2!;
+        emit(SuccessHomeState(_characters));
       } else {
         emit(FailedHomeState('Erro desconhecido'));
       }
@@ -38,7 +41,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         emit(FailedHomeState(response.$1.toString()));
       } else if (response.$2 != null) {
         _offset += _limit;
-        emit(SuccessHomeState(response.$2!));
+        _characters.addAll(response.$2!);
+        emit(SuccessHomeState(_characters));
       } else {
         emit(FailedHomeState('Erro desconhecido'));
       }

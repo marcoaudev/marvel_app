@@ -14,6 +14,7 @@ class TitleDescription extends StatelessWidget {
           alignment: Alignment.centerLeft,
           child: AppText(
             title,
+            maxLines: 2,
             style: Theme.of(context).textTheme.titleMedium,
             semanticsLabel: "Titulo: $title",
           ),

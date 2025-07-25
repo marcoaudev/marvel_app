@@ -2,18 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:marvel_app/app/core/shared/widgets/cached_image/app_cached_image.dart';
 import 'package:marvel_app/app/core/shared/widgets/card/app_card.dart';
 import 'package:marvel_app/app/core/shared/widgets/text/app_text.dart';
+import 'package:marvel_app/app/features/domain/entities/character_entity.dart';
 
 class CharacterListItem extends StatelessWidget {
-  final String name;
-  final String description;
+  final CharacterEntity character;
   final VoidCallback? onTap;
 
-  const CharacterListItem({
-    super.key,
-    required this.name,
-    required this.description,
-    this.onTap,
-  });
+  const CharacterListItem({super.key, this.onTap, required this.character});
 
   @override
   Widget build(BuildContext context) {
@@ -31,32 +26,38 @@ class CharacterListItem extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: AppCachedImage(
-                      semanticsLabel: "Imagem do personagem: $name",
+                      semanticsLabel: "Imagem do personagem: ${character.name}",
                       imageUrl:
-                          'http://i.annihil.us/u/prod/marvel/i/mg/c/e0/35fecbbb9784.jpg',
+                          '${character.thumbnail.path}.${character.thumbnail.extension}',
                     ),
                   ),
                 ),
               ),
               const SizedBox(width: 12),
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    AppText(
-                      name,
-                      style: Theme.of(context).textTheme.titleSmall,
-                      semanticsLabel: "Nome do personagem: $name",
-                    ),
-                    const SizedBox(height: 4),
-                    AppText(
-                      description,
-                      style: Theme.of(context).textTheme.bodyMedium,
-                      semanticsLabel: "Descrição do personagem: $description",
-                    ),
-                  ],
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      AppText(
+                        character.name,
+                        style: Theme.of(context).textTheme.titleSmall,
+                        semanticsLabel: "Nome do personagem: ${character.name}",
+                      ),
+                      const SizedBox(height: 4),
+                      Expanded(
+                        child: AppText(
+                          character.description,
+                          maxLines: 2,
+                          style: Theme.of(context).textTheme.bodyMedium,
+                          semanticsLabel:
+                              "Descrição do personagem: ${character.description}",
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
