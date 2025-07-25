@@ -7,6 +7,7 @@ class CharacterEntity extends Equatable {
   final int id;
   final String name;
   final String description;
+  final DateTime modified;
   final ThumbnailEntity thumbnail;
   final ComicEntity comics;
   final ComicEntity series;
@@ -17,6 +18,7 @@ class CharacterEntity extends Equatable {
   const CharacterEntity({
     required this.id,
     required this.name,
+    required this.modified,
     required this.description,
     required this.thumbnail,
     required this.comics,
@@ -30,6 +32,7 @@ class CharacterEntity extends Equatable {
     return CharacterEntity(
       id: json['id'] as int,
       name: json['name'] as String,
+      modified: DateTime.parse(json['modified'] as String),
       description: json['description'] as String,
       thumbnail: ThumbnailEntity(
         path: json['thumbnail']['path'] as String,
