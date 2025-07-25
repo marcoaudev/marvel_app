@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:marvel_app/app/app.dart';
+import 'package:marvel_app/app/core/shared/injector/app_injector.dart';
 
-void main() {
-  runApp(const App());
-}
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
+  await ApplicationInjector.setup();
+  runApp(const MyApp());
 }
