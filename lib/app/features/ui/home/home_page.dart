@@ -35,12 +35,16 @@ class _HomePageState extends State<HomePage> {
             List<Widget> child = [];
 
             if (state is LoadingHomeState) {
-              child = [SliverToBoxAdapter(child: AppLoading())];
+              child = [
+                SliverFillRemaining(
+                  hasScrollBody: false,
+                  child: Center(child: AppLoading()),
+                ),
+              ];
             }
 
             if (state is FailedHomeState) {
               child = [
-                AppSliverNavigationBar(title: "Marvel App", error: true),
                 SliverFillRemaining(
                   hasScrollBody: false,
                   child: Center(child: Text("erro")),
@@ -52,7 +56,6 @@ class _HomePageState extends State<HomePage> {
               final mainCharacters = state.characters.take(5).toList();
               final allCharacters = state.characters.skip(5).toList();
               child = [
-                AppSliverNavigationBar(title: "Marvel App"),
                 TitleDescription(title: "Personagens principais"),
                 CharactersCarousel(characters: mainCharacters),
                 TitleDescription(title: "Todos os personagens"),
@@ -62,7 +65,7 @@ class _HomePageState extends State<HomePage> {
 
             return CustomScrollView(
               controller: bloc.scrollController,
-              slivers: [...child],
+              slivers: [AppSliverNavigationBar(title: "Marvel App"), ...child],
             );
           },
         ),

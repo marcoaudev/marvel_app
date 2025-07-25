@@ -21,6 +21,10 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Nunito',
           scaffoldBackgroundColor: AppColors.background,
           appBarTheme: const AppBarTheme(backgroundColor: AppColors.primary),
+          progressIndicatorTheme: const ProgressIndicatorThemeData(
+            color: AppColors.primary,
+          ),
+          colorSchemeSeed: AppColors.primary,
           textTheme: TextTheme(
             titleMedium: AppTextStyle.titleMedium(context),
             titleSmall: AppTextStyle.titleSmall(context),
