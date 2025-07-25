@@ -8,7 +8,6 @@
       <img src="assets/prints/IMG-20250725-WA0012.jpg" width="150">
       <img src="assets/prints/IMG-20250725-WA0013.jpg" width="150">
       <img src="assets/prints/IMG-20250725-WA0014.jpg" width="150">
-      <img src="assets/prints/IMG-20250725-WA0015.jpg" width="150">
    </p>
 
 ## 📋 Visão Geral
