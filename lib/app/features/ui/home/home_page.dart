@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marvel_app/app/core/shared/widgets/app_bar/app_sliver_navigation_bar.dart';
+import 'package:marvel_app/app/core/shared/widgets/errors/app_internal_server_error.dart';
+import 'package:marvel_app/app/core/shared/widgets/errors/app_unauthorized_error.dart';
+import 'package:marvel_app/app/core/shared/widgets/errors/app_unknown_error.dart';
 import 'package:marvel_app/app/core/shared/widgets/loading/app_loading.dart';
 import 'package:marvel_app/app/features/ui/home/blocs/home_bloc.dart';
 import 'package:marvel_app/app/features/ui/home/blocs/home_event.dart';
@@ -44,12 +47,33 @@ class _HomePageState extends State<HomePage> {
             }
 
             if (state is FailedHomeState) {
-              child = [
-                SliverFillRemaining(
-                  hasScrollBody: false,
-                  child: Center(child: Text("erro")),
-                ),
-              ];
+              final error = state.error.toLowerCase();
+              switch (error) {
+                case "unauthorized":
+                  child = [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Center(child: AppUnauthorizedError()),
+                    ),
+                  ];
+                  break;
+                case "server unavailable":
+                  child = [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Center(child: AppInternalServerError()),
+                    ),
+                  ];
+                  break;
+                default:
+                  child = [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Center(child: AppUnknownError()),
+                    ),
+                  ];
+                  break;
+              }
             }
 
             if (state is SuccessHomeState) {
