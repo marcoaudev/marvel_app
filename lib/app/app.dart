@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
           ),
           colorSchemeSeed: AppColors.primary,
           textTheme: TextTheme(
+            titleLarge: AppTextStyle.titleLarge(context),
             titleMedium: AppTextStyle.titleMedium(context),
             titleSmall: AppTextStyle.titleSmall(context),
             bodyMedium: AppTextStyle.bodyMedium(context),

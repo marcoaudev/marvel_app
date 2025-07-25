@@ -3,6 +3,7 @@ import 'package:marvel_app/app/core/shared/widgets/cached_image/app_cached_image
 import 'package:marvel_app/app/core/shared/widgets/card/app_card.dart';
 import 'package:marvel_app/app/core/shared/widgets/text/app_text.dart';
 import 'package:marvel_app/app/features/domain/entities/character_entity.dart';
+import 'package:marvel_app/app/features/ui/character/character_details_page.dart';
 
 class CharacterListItem extends StatelessWidget {
   final CharacterEntity character;
@@ -13,7 +14,13 @@ class CharacterListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => CharacterDetailsPage(character: character),
+          ),
+        );
+      },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
         child: SizedBox(

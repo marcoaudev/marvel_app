@@ -3,7 +3,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
 import 'package:marvel_app/app/core/services/http_client/implementations/dio_implementation.dart';
 import 'package:marvel_app/app/features/data/datasource/character_datasource.dart';
-import 'package:marvel_app/app/features/data/datasource/implementations/character_marvel_datasource_remote.dart';
+import 'package:marvel_app/app/features/data/datasource/implementations/character_marvel_datasource_local.dart';
 import 'package:marvel_app/app/features/data/repositories/character_repository_implementation.dart';
 import 'package:marvel_app/app/features/domain/repositories/character_repository.dart';
 import 'package:marvel_app/app/features/domain/usecases/get_characters_use_case.dart';
@@ -34,13 +34,13 @@ class ApplicationInjector {
       () => DioImplementation(getIt<Dio>()),
     );
 
-    getIt.registerFactory<ICharacterDataSource>(
-      () => CharacterMarvelDataSourceRemote(getIt<DioImplementation>()),
-    );
-
     // getIt.registerFactory<ICharacterDataSource>(
-    //   () => CharactersMarvelDataSourceLocal(),
+    //   () => CharacterMarvelDataSourceRemote(getIt<DioImplementation>()),
     // );
+
+    getIt.registerFactory<ICharacterDataSource>(
+      () => CharactersMarvelDataSourceLocal(),
+    );
   }
 
   static Future<void> _repositoriesSetup() async {
