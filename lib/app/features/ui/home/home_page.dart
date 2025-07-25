@@ -35,7 +35,12 @@ class _HomePageState extends State<HomePage> {
             List<Widget> child = [];
 
             if (state is LoadingHomeState) {
-              child = [SliverToBoxAdapter(child: AppLoading())];
+              child = [
+                SliverFillRemaining(
+                  hasScrollBody: false,
+                  child: Center(child: AppLoading()),
+                ),
+              ];
             }
 
             if (state is FailedHomeState) {
