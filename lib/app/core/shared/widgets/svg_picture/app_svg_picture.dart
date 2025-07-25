@@ -15,8 +15,8 @@ class AppSvgPicture extends StatelessWidget {
     return Center(
       child: SvgPicture.asset(
         svgPath,
-        width: 100,
-        height: 100,
+        width: 250,
+        height: 250,
         semanticsLabel: semanticsLabel,
       ),
     );
