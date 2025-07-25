@@ -68,3 +68,47 @@ Ele adota a **Clean Architecture**, promovendo:
 | **Injeção de Dependência** | get_it | ^8.0.3   | Service Locator                                  |
 | **SVG** | flutter_svg             | ^2.2.0   | Renderização de gráficos vetoriais              |
 
+## ⚙️ Como Executar o Projeto
+
+Para rodar este projeto em sua máquina local, siga os passos abaixo:
+
+1.  **Pré-requisitos:**
+    * Certifique-se de ter o **Flutter SDK** instalado e configurado em sua máquina. Você pode verificar isso executando `flutter doctor` no terminal.
+
+2.  **Clonar o Repositório:**
+
+    ```bash
+    git clone [https://github.com/seu-usuario/marvel_app.git](https://github.com/seu-usuario/marvel_app.git)
+    cd marvel_app
+    ```
+
+3.  **Configurar Variáveis de Ambiente:**
+    * A API da Marvel requer chaves de autenticação. Crie um arquivo `.env` na raiz do projeto (na mesma pasta onde está o `pubspec.yaml`).
+    * Obtenha suas chaves (`PUBLIC_API_KEY` e `PRIVATE_API_KEY`) no [portal de desenvolvedores da Marvel](https://developer.marvel.com/).
+    * Adicione as chaves ao arquivo `.env` da seguinte forma:
+
+        ```
+        PUBLIC_API_KEY=sua_chave_publica_aqui
+        PRIVATE_API_KEY=sua_chave_privada_aqui
+        ```
+
+4.  **Instalar Dependências:**
+    * No diretório raiz do projeto, execute:
+
+        ```bash
+        flutter pub get
+        ```
+
+
+5.  **Rodar a Aplicação:**
+    * Conecte um dispositivo Android ou iOS (ou inicie um emulador/simulador).
+    * No terminal, execute:
+
+        ```bash
+        flutter run
+        ```
+
+    A aplicação será compilada e iniciada no dispositivo ou emulador conectado.
+
+---
+
